@@ -10,32 +10,37 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="" method="post">
+                        <form action="action.php" method="POST">
+
                             <div class="row mb-3">
                                 <label class="col-md-3">First Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="first_name" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-md-3">Last Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="last_name" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-md-3">Full Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text"
+                                           value="<?php echo isset($_GET['result']) ? $_GET['result'] : ''; ?>"
+                                           class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label class="col-md-3"></label>
                                 <div class="col-md-9">
-                                    <input type="submit" class="btn btn-success" value="Make Full Name">
+                                    <input type="submit" class="btn btn-success" name="full_name_btn"
+                                           value="Make Full Name">
                                 </div>
                             </div>
+
                         </form>
 
                     </div>

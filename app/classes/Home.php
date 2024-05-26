@@ -17,6 +17,12 @@ class Home
         $feature, $features, $galleries, $gallery,
         $newses, $news, $articles, $article;
 
+    public function __construct()
+    {
+        session_start();
+    }
+
+
     public function index()
     {
         $this->slider = new Slider();
@@ -51,12 +57,20 @@ class Home
 
     public function about()
     {
-        return view('about');
+        if (isset($_SESSION['id'])) {
+            return view('about');
+        } else {
+            header("Location:action.php?page=login&&message=Please login for access dashboard");
+        }
     }
 
     public function contact()
     {
-        return view('contact');
+        if (isset($_SESSION['id'])) {
+            return view('contact');
+        } else {
+            header("Location:action.php?page=login&&message=Please login for access dashboard");
+        }
     }
 
     public function career()
@@ -64,12 +78,35 @@ class Home
         return view('career');
     }
 
+
     public function detail($id)
     {
         $this->slider = new Slider();
         $this->slide = $this->slider->getSliderById($id);
         return view('detail', ['slide' => $this->slide]);
     }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['id']);
+        unset($_SESSION['name']);
+        header("Location:action.php?page=home");
+    }
+
+    public function dashboard()
+    {
+        if (isset($_SESSION['id'])) {
+            return view('dashboard');
+        } else {
+            header("Location:action.php?page=login&&message=Please login for access dashboard");
+        }
+    }
+
 
     public function blogDetail($id)
     {

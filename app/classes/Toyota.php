@@ -4,7 +4,8 @@
 namespace App\classes;
 
 
-class Toyota
+class Toyota extends Car
 {
+
 
 }

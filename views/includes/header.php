@@ -35,6 +35,11 @@
                 <li><a href="" class="nav-link">Gallery</a></li>
                 <li><a href="action.php?page=career" class="nav-link">Career</a></li>
                 <li><a href="action.php?page=contact" class="nav-link">Contact</a></li>
+                <?php if (isset($_SESSION['id'])) { ?>
+                    <li><a href="action.php?page=logout" class="nav-link">Logout</a></li>
+                <?php } else { ?>
+                    <li><a href="action.php?page=login" class="nav-link">Login</a></li>
+                <?php } ?>
             </ul>
         </div>
     </div>

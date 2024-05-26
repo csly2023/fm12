@@ -5,6 +5,7 @@ use App\classes\Home;
 use App\classes\FullName;
 use App\classes\Calculator;
 use App\classes\NumberRange;
+use App\classes\Auth;
 
 $home = new Home();
 
@@ -21,8 +22,14 @@ if (isset($_GET['page'])) {
         $home->contact();
     } elseif ($_GET['page'] == 'career') {
         $home->career();
+    } elseif ($_GET['page'] == 'dashboard') {
+        $home->dashboard();
     } elseif ($_GET['page'] == 'detail') {
         $home->detail($_GET['id']);
+    } elseif ($_GET['page'] == 'login') {
+        $home->login();
+    } elseif ($_GET['page'] == 'logout') {
+        $home->logout();
     } elseif ($_GET['page'] == 'blog-detail') {
         $home->blogDetail($_GET['id']);
     } elseif ($_GET['page'] == 'single-news') {
@@ -39,6 +46,9 @@ if (isset($_GET['page'])) {
 } elseif (isset($_POST['number_range_btn'])) {
     $numberRange = new NumberRange($_POST);
     $numberRange->numberRange();
+} elseif (isset($_POST['login_btn'])) {
+    $auth = new Auth($_POST);
+    $auth->loginCheck();
 }
 
 

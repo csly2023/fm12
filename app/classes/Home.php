@@ -59,6 +59,11 @@ class Home
         return view('contact');
     }
 
+    public function career()
+    {
+        return view('career');
+    }
+
     public function detail($id)
     {
         $this->slider = new Slider();

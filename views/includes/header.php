@@ -33,7 +33,7 @@
                 </li>
                 <li><a href="" class="nav-link">Notice</a></li>
                 <li><a href="" class="nav-link">Gallery</a></li>
-                <li><a href="" class="nav-link">Career</a></li>
+                <li><a href="action.php?page=career" class="nav-link">Career</a></li>
                 <li><a href="action.php?page=contact" class="nav-link">Contact</a></li>
             </ul>
         </div>

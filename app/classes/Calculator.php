@@ -12,7 +12,7 @@ class Calculator
     {
         $this->firstNumber = $post['first_number'];
         $this->lastNumber = $post['last_number'];
-        $this->choice = $post['choice'];;
+        $this->choice = $post['choice'];
     }
 
     public function calculate()
